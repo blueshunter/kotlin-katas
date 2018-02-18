@@ -23,8 +23,22 @@ class FizzBuzzTest : TestCase() {
     }
 
     @Test fun `test third number is Fizz`() {
-        game.getNext()
-        game.getNext()
+        for(i in 1..2) game.getNext()
         assertEquals("Fizz", game.getNext())
+    }
+
+    @Test fun `test fifth number is Buzz`() {
+        for(i in 1..4) game.getNext()
+        assertEquals("Buzz", game.getNext())
+    }
+
+    @Test fun `test 6th number is Fizz`() {
+        for(i in 1..5) game.getNext()
+        assertEquals("Fizz", game.getNext())
+    }
+
+    @Test fun `test 10th number is Buzz`() {
+        for(i in 1..9) game.getNext()
+        assertEquals("Buzz", game.getNext())
     }
 }

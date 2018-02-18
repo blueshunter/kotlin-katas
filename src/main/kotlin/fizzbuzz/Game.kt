@@ -1,17 +1,21 @@
 package fizzbuzz
 
 class Game {
-    var nextIndex: Int = 0
+    private var nextIndex: Int = 0
 
     fun getNext(): String {
         nextIndex++
 
-        return if(isThreeNumber(nextIndex)) {
+        val isDivisibleBy3 = (nextIndex % 3 == 0)
+        val isDivisibleBy5 = (nextIndex % 5 == 0)
+
+        return if(isDivisibleBy3) {
             "Fizz"
-        } else {
+        } else if(isDivisibleBy5) {
+            "Buzz"
+        }
+        else {
             (nextIndex).toString()
         }
     }
-
-    private fun isThreeNumber(number: Int) = (number == 3)
 }
