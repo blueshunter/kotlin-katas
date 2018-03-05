@@ -5,12 +5,13 @@ import junit.framework.TestCase
 class PasswordTest : TestCase() {
 
     fun `test than password has 6 or more characters`() {
+
         assertFalse(Password("1234").hasSixOrMoreCharacters)
         assertTrue(Password("123456").hasSixOrMoreCharacters)
     }
 
     fun `test password contain one number`() {
-        assertTrue(Password("1").hasNumber)
+        assertTrue(Password("1").userErrors.contains(Password.Error.HAS_NUMBER))
         assertFalse(Password("*").hasNumber)
     }
 
