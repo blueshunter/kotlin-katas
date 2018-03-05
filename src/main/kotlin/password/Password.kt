@@ -9,11 +9,18 @@ class Password(
     val hasLetter get() = value.contains(regex = Regex("[^0-9]"))
     val hasSpecialCharacter get() =  value.contains(regex = Regex("[^\\w*]"))
 
-    fun isStrong(): Boolean {
+    fun checkStrengthForUser(): Boolean {
+        return (hasSixOrMoreCharacters
+                && hasNumber
+                && hasLetter)
+    }
+
+    fun checkStrengthForAdmin(): Boolean {
         return (hasTenOrMoreCharacters
                 && hasNumber
                 && hasLetter
                 && hasSpecialCharacter)
     }
+
 
 }

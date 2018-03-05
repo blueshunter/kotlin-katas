@@ -29,8 +29,12 @@ class PasswordTest : TestCase() {
         assertFalse(Password("e").hasSpecialCharacter)
     }
 
-    fun `test check password strength with 10 characters password with numbers and letters and accentued letters`() {
-        assertTrue(Password("eéààà91234").isStrong())
-        assertTrue(Password("eeeeaa....91234").isStrong())
+    fun `test check password strength for user`() {
+        assertTrue(Password("eéààà9").checkStrengthForUser())
+    }
+
+    fun `test check password strength for admin`() {
+        assertTrue(Password("eéààà91234").checkStrengthForAdmin())
+        assertTrue(Password("eeeeaa....91234").checkStrengthForAdmin())
     }
 }
