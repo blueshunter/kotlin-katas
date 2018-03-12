@@ -41,4 +41,9 @@ class FizzBuzzTest : TestCase() {
         for(i in 1..9) game.getNext()
         assertEquals("Buzz", game.getNext())
     }
+
+    @Test fun `test 15th number is Buzz`() {
+        for(i in 1..14) game.getNext()
+        assertEquals("FizzBuzz", game.getNext())
+    }
 }
