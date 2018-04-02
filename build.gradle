@@ -2,7 +2,7 @@ group 'thoretton-edwin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.2.21'
+    ext.kotlin_version = '1.2.31'
 
     repositories {
         mavenCentral()
@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.1.12'
     testCompile 'junit:junit:4.12'
 }
 
