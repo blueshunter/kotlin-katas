@@ -10,17 +10,14 @@ class GridTestCase : TestCase() {
 
     }
 
-    @Test(expected = GridException::class)
     fun `test that grid must be have two rows minimum`() {
 
     }
 
-    @Test(expected = GridException::class)
     fun `test that grid must be have two columns minimum`() {
 
     }
 
-    @Test(expected = GridException::class)
     fun `test that grid must be have same number of columns in each rows`() {
 
     }
