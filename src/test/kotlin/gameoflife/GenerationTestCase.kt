@@ -10,10 +10,7 @@ class GenerationTestCase : TestCase() {
 
 
         val game = Game(underpopulationGridString)
-        println(game.show())
         game.next()
-        println("\n----next-----\n")
-        println(game.show())
         assertEquals(game.show(), "..\n..")
     }
 
@@ -26,10 +23,7 @@ class GenerationTestCase : TestCase() {
                                      "....."
 
         val game = Game(gridUnderTest)
-        println(game.show())
         game.next()
-        println("\n----next-----\n")
-        println(game.show())
         assertEquals(game.show(), "**...\n" +
                 "**...\n" +
                 ".....\n" +
@@ -46,10 +40,7 @@ class GenerationTestCase : TestCase() {
                 "....."
 
         val game = Game(gridUnderTest)
-        println(game.show())
         game.next()
-        println("\n----next-----\n")
-        println(game.show())
         assertEquals(game.show(), ".....\n" +
                 "..*..\n" +
                 ".*.*.\n" +
@@ -64,13 +55,48 @@ class GenerationTestCase : TestCase() {
                 "........"
 
         val game = Game(gridUnderTest)
-        println(game.show())
         game.next()
-        println("\n----next-----\n")
-        println(game.show())
         assertEquals(game.show(), "........\n" +
                 "...**...\n" +
                 "...**...\n" +
                 "........")
     }
+
+
+    fun `test that ten cell row show correct form after ten generations`() {
+        val gridUnderTest =
+            "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    ".....**********.....\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "...................."
+
+        val game = Game(gridUnderTest)
+
+        for(i in 1..10) {
+            game.next()
+        }
+
+        val resultExpected =
+            "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "....*..*.**.*..*....\n" +
+                    "....****.**.****....\n" +
+                    "....*..*.**.*..*....\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "....................\n" +
+                    "...................."
+
+
+
+        assertEquals(game.show(), resultExpected)
+    }
+
 }
