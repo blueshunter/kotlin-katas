@@ -14,14 +14,13 @@ fun main(args: Array<String>) {
                 "....................\n" +
                 "...................."
 
-    val game = Game(gridUnderTest)
 
     var frame = 0
     while (frame < 10000) {
         println(String.format("\b\b\b\b\b"))
-        println(game.show())
+        //println(game.show())
         Thread.sleep(1000)
-        game.next()
+        //game.next()
         frame++
     }
 }
